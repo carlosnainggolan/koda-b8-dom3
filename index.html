@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Survey</title>
+</head>
+<body>
+    <script>
+
+        const title = document.createElement ("h1")
+        title.textContent = "Form Survey Perokok"
+        const titleDescription = document.createElement ("p")
+        titleDescription.textContent = "Form ini dibuat untuk menentukan orang-orang yang melakukan aktivitas merokok sehari-hari"
+
+        const form = document.createElement ("form")
+        form.style.display = "flex"
+        form.style.flexDirection = "column"
+        form.style.gap = "16px"
+
+        // Nama
+        const nama = document.createElement ("div")
+        nama.style.display ="flex"
+        nama.style.flexDirection = "column"
+        nama.style.gap = "4px"
+        const labelNama = document.createElement ("label")
+        labelNama.textContent = "Siapa nama anda?"
+        const inputNama = document.createElement ("input")
+        inputNama.style.width = "300px"
+        nama.append(labelNama,inputNama)
+
+        // Umur
+        const umur = document.createElement ("div")
+        umur.style.display ="flex"
+        umur.style.flexDirection = "column"
+        umur.style.gap = "8px"
+        const labelUmur = document.createElement ("label")
+        labelUmur.textContent = "Berapa umur anda?"
+        const inputUmur = document.createElement ("input")
+        inputUmur.style.width = "300px"
+        umur.append(labelUmur,inputUmur)
+
+        //Gender
+        const gender = document.createElement ("div")
+        gender.style.display ="flex"
+        gender.style.flexDirection = "column"
+        gender.style.gap = "8px"
+        const labelGender = document.createElement ("label")
+        labelGender.textContent = "Apa jenis kelamin anda?"
+
+        const radioContainer1= document.createElement ("div")
+        radioContainer1.style.display = "flex"
+        const inputGender1 = document.createElement ("input")
+        inputGender1.type = "radio"
+        const labelLaki = document.createElement ("label")
+        labelLaki.textContent = "Laki-laki"
+        radioContainer1.append (inputGender1, labelLaki)
+
+        const radioContainer2= document.createElement ("div")
+        radioContainer1.style.display = "flex"
+        const inputGender2 = document.createElement ("input")
+        inputGender2.type = "radio"
+        const labelPerempuan = document.createElement ("label")
+        labelPerempuan.textContent = "Perempuan"
+        radioContainer2.append (inputGender2, labelPerempuan)
+
+        gender.append(labelGender,radioContainer1,radioContainer2)
+
+        //Validasi perokok
+        const rokok = document.createElement ("div")
+        rokok.style.display ="flex"
+        rokok.style.flexDirection = "column"
+        rokok.style.gap = "8px"
+        const labelRokok = document.createElement ("label")
+        labelRokok.textContent = "Apakah anda perokok?"
+
+        const radioContainerRokok1= document.createElement ("div")
+        radioContainerRokok1.style.display = "flex"
+        const inputRokok1 = document.createElement ("input")
+        inputRokok1.type = "radio"
+        const labelYa = document.createElement ("label")
+        labelYa.textContent = "Ya"
+        radioContainerRokok1.append (inputRokok1, labelYa)
+
+        const radioContainerRokok2= document.createElement ("div")
+        radioContainerRokok2.style.display = "flex"
+        const inputRokok2 = document.createElement ("input")
+        inputRokok2.type = "radio"
+        const labelTidak = document.createElement ("label")
+        labelTidak.textContent = "Tidak"
+        radioContainerRokok2.append (inputRokok2, labelTidak)
+
+        rokok.append(labelRokok,radioContainerRokok1,radioContainerRokok2)
+
+        //Jenis Rokok
+        const jenisRokok = document.createElement ("div")
+        jenisRokok.style.display ="flex"
+        jenisRokok.style.flexDirection = "column"
+        jenisRokok.style.gap = "8px"
+        const labelJenisRokok = document.createElement ("label")
+        labelJenisRokok.textContent = "Jika anda perokok, rokok apa yang pernah anda coba?"
+
+        const checkboxContainerGarpit= document.createElement ("div")
+        checkboxContainerGarpit.style.display = "flex"
+        const inputGarpit = document.createElement ("input")
+        inputGarpit.type = "checkbox"
+        const labelGarpit = document.createElement ("label")
+        labelGarpit.textContent = "Gudang Garam Filter"
+        checkboxContainerGarpit.append (inputGarpit, labelGarpit)
+
+        const checkboxContainerLucky= document.createElement ("div")
+        checkboxContainerLucky.style.display = "flex"
+        const inputLucky = document.createElement ("input")
+        inputLucky.type = "checkbox"
+        const labelLucky = document.createElement ("label")
+        labelLucky.textContent = "Lucky Strike"
+        checkboxContainerLucky.append (inputLucky, labelLucky)
+
+        const checkboxContainerMarlboro= document.createElement ("div")
+        checkboxContainerMarlboro.style.display = "flex"
+        const inputMarlboro = document.createElement ("input")
+        inputMarlboro.type = "checkbox"
+        const labelMarlboro = document.createElement ("label")
+        labelMarlboro.textContent = "Marlboro"
+        checkboxContainerMarlboro.append (inputMarlboro, labelMarlboro)
+
+        const checkboxContainerEsse= document.createElement ("div")
+        checkboxContainerEsse.style.display = "flex"
+        const inputEsse = document.createElement ("input")
+        inputEsse.type = "checkbox"
+        const labelEsse = document.createElement ("label")
+        labelEsse.textContent = "Esse"
+        checkboxContainerEsse.append (inputEsse, labelEsse)
+
+        jenisRokok.append (
+            labelJenisRokok,
+            checkboxContainerGarpit,
+            checkboxContainerLucky,
+            checkboxContainerMarlboro,
+            checkboxContainerEsse
+        )
+
+        const button = document.createElement ("div")
+        button.style.display ="flex"
+        button.style.gap = "8px"
+        const submit = document.createElement ("input")
+        submit.type = "submit"
+        submit.placeholder = "SUBMIT"
+        const reset = document.createElement ("input")
+        reset.type = "reset"
+        reset.placeholder = "RESET"
+        button.append (submit, reset)
+
+        form.append(
+            title,
+            titleDescription,
+            nama,
+            umur,
+            gender,
+            rokok,
+            jenisRokok,
+            button
+        )
+        
+        document.body.append(
+            form
+        )
+    </script>
+</body>
+</html>
